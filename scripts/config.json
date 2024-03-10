@@ -11,8 +11,8 @@
       "id": "NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
       "directory": "commons-codec",
       "commands": [
-        "git checkout main",
-        "git checkout -b randoop-unit-tests:NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
+        "git checkout randoop-unit-test-generator",
+        "git checkout -b randoop-unit-tests.original.NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
         "mvn clean",
         "mvn package -Dmaven.test.skip=true -Drat.ignoreErrors=true",
         "mvn dependency:build-classpath -Dmdep.outputFile=cp.txt",
@@ -22,9 +22,13 @@
         "git add -A",
         "git commit -m \"~\"",
         "git checkout NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
-        "git checkout -b NatGen-base.commons-codec.mid-119.idx-565.1.mutant-with-randoop-tests",
-        "git merge randoop-unit-tests:NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
-        "mvn test -Drat.ignoreErrors=true"
+        "git checkout -b randoop-unit-tests.mutant.NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
+        "git merge randoop-unit-tests.original.NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
+        "mvn test -Drat.ignoreErrors=true",
+        "<CHECK-IF-MUTATION-IS-BUGGY>",
+        "git checkout randoop-unit-test-generator",
+        "git branch -D randoop-unit-tests.original.NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
+        "git branch -D randoop-unit-tests.mutant.NatGen-base.commons-codec.mid-119.idx-565.1.mutant"
       ]
     }
   ]
