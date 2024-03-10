@@ -4,6 +4,7 @@
       "id": "codet5-base.jackson-dataformat-xml.mid-54.idx-43346.3.mutant",
       "directory": "jackson-dataformat-xml",
       "commands": [
+        "echo $RANDOOP"
       ]
     },
     {
@@ -32,12 +33,6 @@
     },
     {
       "id": "mubert-base.commons-collections.mid-259.idx-13234.15.mutant",
-      "directory": "commons-collections",
-      "commands": [        
-      ]
-    },
-    {
-      "id": "NatGen-base.commons-collections.mid-2204.idx-4718.1.mutant",
       "directory": "commons-collections",
       "commands": [
         "git checkout randoop-unit-test-generator",
