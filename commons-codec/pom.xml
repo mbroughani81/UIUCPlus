@@ -251,6 +251,12 @@ limitations under the License.
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>org.junit.vintage</groupId>
+      <artifactId>junit-vintage-engine</artifactId>
+      <version>5.7.0</version>
+      <scope>test</scope>
+    </dependency>    
   </dependencies>
   <properties>
     <maven.compiler.source>1.8</maven.compiler.source>

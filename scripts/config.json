@@ -11,13 +11,20 @@
       "id": "NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
       "directory": "commons-codec",
       "commands": [
+        "git checkout main",
+        "git checkout -b randoop-unit-tests:NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
         "mvn clean",
         "mvn package -Dmaven.test.skip=true -Drat.ignoreErrors=true",
         "mvn dependency:build-classpath -Dmdep.outputFile=cp.txt",
         "java -classpath $(cat cp.txt):target/commons-codec-1.16-SNAPSHOT.jar:/home/mbroughani81/Documents/test/UIUC-Eval-Task-Related-Resources/randoop-4.3.2/randoop-all-4.3.2.jar randoop.main.Main gentests --testjar=target/commons-codec-1.16-SNAPSHOT.jar --junit-output-dir=src/test/java --time-limit=60 --randomseed=1",
         "rm src/test/java/ErrorTest*",
         "mvn test -Drat.ignoreErrors=true",
-        "echo \" FINISHED \""
+        "git add -A",
+        "git commit -m \"~\"",
+        "git checkout NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
+        "git checkout -b NatGen-base.commons-codec.mid-119.idx-565.1.mutant-with-randoop-tests",
+        "git merge randoop-unit-tests:NatGen-base.commons-codec.mid-119.idx-565.1.mutant",
+        "mvn test -Drat.ignoreErrors=true"
       ]
     }
   ]
